@@ -1,0 +1,92 @@
+- name: "priority: urgent"
+  description: "Critical work or bug that is holding up other things"
+  color: "#b60205"
+
+- name: "priority: high"
+  description: "Important features or user-visible bugs that should be done soon"
+  color: "#fbca04"
+
+- name: "priority: medium"
+  description: "Should be done but isn't prioritised ahead of others"
+  color: "#88660f"
+
+- name: "priority: low"
+  description: "Not important and unlikely to be done unless it becomes important"
+  color: "#9ab562"
+
+- name: "status: blocked"
+  description: "Blocked by another issue or external requirement"
+  color: "#b60205"
+
+- name: "status: duplicate"
+  description: "Indicates similar issues, pull requests, or discussions"
+  color: "#cfd3d7"
+  from_name: "duplicate"
+
+- name: "status: cooking"
+  description: "WIP changes that are being actively worked on"
+  color: "#006b75"
+
+- name: "status: good first issue"
+  description: "A good issue for first-time contributors"
+  color: "#008672"
+  from_name: "good first issue"
+
+- name: "status: help wanted"
+  description: "Help requested for an issue or pull request"
+  color: "#008672"
+  from_name: "help wanted"
+
+- name: "status: invalid"
+  description: "This doesn't seem right"
+  color: "#e4e669"
+  from_name: "invalid"
+
+- name: "status: wontfix"
+  description: "This will not be worked on"
+  color: "#ffffff"
+  from_name: "wontfix"
+
+- name: "status: on hold"
+  description: "Other issues are taking priority"
+  color: "#a2eeef"
+
+- name: "type: bug"
+  description: "Something isn't working"
+  color: "#d73a4a"
+  from_name: "bug"
+
+- name: "type: ci & build"
+  description: "Related to build or continuous integration files and scripts"
+  color: "#f7c3d8"
+
+- name: "type: dependencies"
+  description: "Referring to or updating a dependency file"
+  color: "#f7c3d8"
+
+- name: "type: 3rd party"
+  description: "Regarding a 3rd party API/script/package/dependency"
+  color: "#f7c3d8"
+
+- name: "type: documentation"
+  description: "Improvements or additions to documentation"
+  color: "#0075ca"
+  from_name: "documentation"
+
+- name: "type: enhancement"
+  description: "New enhancement or improvement"
+  color: "#006b75"
+  from_name: "enhancement"
+
+- name: "type: feature"
+  description: "New feature request"
+  color: "#006b75"
+
+- name: "type: question"
+  description: "Further information is requested or needed"
+  color: "#d876e3"
+  from_name: "question"
+
+- name: "github_actions"
+  description: "Pull requests that update GitHub Actions code or configuration"
+  color: "#000000"
