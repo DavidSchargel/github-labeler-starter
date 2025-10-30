@@ -15,13 +15,14 @@ GitHub Labels are declared as code in `.github/labels.yml` and synchronized by t
 - Add `.github/labels.yml` and `.github/workflows/labeler.yml` to your repository.
 - Add/modify labels in `.github/labels.yml`. This Starter adds new labels and changes the "standard" labels in your repository to match the configuration in this file.
 - Optionally validate the YAML: `yamllint .github/labels.yml`. Note that the GitHub Action automatically lints the YAML file during execution.
-- Open a PR; the workflow previews changes without applying. After merge to `main`, labels sync automatically.
-- For immediate sync post‑merge: `gh workflow run "Manage labels" --ref main`.
+- On GitHub, visit the "Actions" tab and select the "Manage labels" workflow.
+- Manually trigger the workflow using the "Run workflow" button and optionally select the branch you want to apply it to (with the expectation that it will eventually be in `main` branch).
+- The workflow will run and synchronize your repository's labels with the configuration in `.github/labels.yml`.
 
 ## Disabling the Workflow after Setup
 To disable the GitHub Actions workflow after setting up your labels, you can either:
-- Delete the `.github/workflows/labeler.yml` and `.github/labels.yml` files from your repository.
-- Or, disable GitHub Actions for the repository in the repository settings under the "Actions" tab.
+- On GitHub, visit the "Actions" tab and select the "Manage labels" workflow and click on the "Disable workflow" menu item in the extras menu pulldown.
+- Or, delete the `.github/workflows/labeler.yml` and `.github/labels.yml` files from your repository.
 
 ## Original GitHub Labels
 - Reference defaults: [ghaction-github-labeler/samples/original.yml](https://github.com/crazy-max/ghaction-github-labeler/blob/master/samples/original.yml)
