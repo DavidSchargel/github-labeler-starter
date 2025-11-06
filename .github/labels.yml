@@ -86,6 +86,10 @@
   description: "New feature request"
   color: "#006b75"
 
+- name: "type: repo prompt"
+  description: "New feature request"
+  color: "#006b75"
+
 - name: "type: question"
   description: "Further information is requested or needed"
   color: "#d876e3"
