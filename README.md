@@ -8,16 +8,51 @@ GitHub Labels are declared as code in `.github/labels.yml` and synchronized by t
 
 ## Key Files
 - `.github/labels.yml` — Single source of truth for labels. Fields: `name`, `description`, `color` (lowercase hex with leading `#`), optional `from_name` for renames. Keep two‑space indentation and double‑quoted strings.
-- Even though it is not required by the system, this Starter uses categories that follow prefix `priority:`, `status:`, and `type:` naming (e.g., `"priority: urgent"`).
-- `.github/workflows/labeler.yml` — "Manage labels" workflow. Triggers on changes to label config (PR dry‑run, push applies). Uses `crazy-max/ghaction-github-labeler@v5` with `yaml-file: .github/labels.yml` and `exclude` rules for `help*` and `*issue`.
+- Labels are organized into categories with prefixes: `priority:`, `status:`, and `type:` (e.g., `"priority: urgent"`), plus special labels like `github_actions`.
+- `.github/workflows/labeler.yml` — "Manage labels" workflow. Manually triggered via `workflow_dispatch`. Uses `crazy-max/ghaction-github-labeler@v5` with `yaml-file: .github/labels.yml` and `exclude` rules for `help*` and `*issue`.
 
 ## Deployment
 - Add `.github/labels.yml` and `.github/workflows/labeler.yml` to your repository.
 - Add/modify labels in `.github/labels.yml`. This Starter adds new labels and changes the "standard" labels in your repository to match the configuration in this file.
 - Optionally validate the YAML: `yamllint .github/labels.yml`. Note that the GitHub Action automatically lints the YAML file during execution.
 - On GitHub, visit the "Actions" tab and select the "Manage labels" workflow.
-- Manually trigger the workflow using the "Run workflow" button and optionally select the branch you want to apply it to (with the expectation that it will eventually be in `main` branch).
+- Manually trigger the workflow using the "Run workflow" button and select the branch you want to apply it to (recommended to run on `main` branch).
 - The workflow will run and synchronize your repository's labels with the configuration in `.github/labels.yml`.
+
+## Label Categories
+
+### Priority Labels
+- `priority: urgent` — Critical work or bug that is holding up other things
+- `priority: high` — Important features or user-visible bugs that should be done soon
+- `priority: medium` — Should be done but isn't prioritised ahead of others
+- `priority: low` — Not important and unlikely to be done unless it becomes important
+
+### Status Labels
+- `status: blocked` — Blocked by another issue or external requirement
+- `status: bot` — Assigned to a bot
+- `status: duplicate` — Indicates similar issues, pull requests, or discussions
+- `status: cooking` — WIP changes that are being actively worked on
+- `status: good first issue` — A good issue for first-time contributors
+- `status: help wanted` — Help requested for an issue or pull request
+- `status: invalid` — This doesn't seem right
+- `status: wontfix` — This will not be worked on
+- `status: on hold` — Other issues are taking priority
+
+### Type Labels
+- `type: bug` — Something isn't working
+- `type: ci & build` — Related to build or continuous integration files and scripts
+- `type: dependencies` — Referring to or updating a dependency file
+- `type: 3rd party` — Regarding a 3rd party API/script/package/dependency
+- `type: a11y` — Accessibility-related issues or improvements
+- `type: i18n` — Internationalization-related issues or improvements
+- `type: documentation` — Improvements or additions to documentation
+- `type: enhancement` — New enhancement or improvement
+- `type: feature` — New feature request
+- `type: repo prompt` — New feature request
+- `type: question` — Further information is requested or needed
+
+### Special Labels
+- `github_actions` — Pull requests that update GitHub Actions code or configuration
 
 ## Disabling the Workflow after Setup
 To disable the GitHub Actions workflow after setting up your labels, you can either:

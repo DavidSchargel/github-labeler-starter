@@ -72,6 +72,14 @@
   description: "Regarding a 3rd party API/script/package/dependency"
   color: "#f7c3d8"
 
+- name: "type: a11y"
+  description: "Accessibility-related issues or improvements"
+  color: "#f7c3d8"
+
+- name: "type: i18n"
+  description: "Internationalization-related issues or improvements"
+  color: "#f7c3d8"
+
 - name: "type: documentation"
   description: "Improvements or additions to documentation"
   color: "#0075ca"
@@ -83,10 +91,6 @@
   from_name: "enhancement"
 
 - name: "type: feature"
-  description: "New feature request"
-  color: "#006b75"
-
-- name: "type: repo prompt"
   description: "New feature request"
   color: "#006b75"
 
